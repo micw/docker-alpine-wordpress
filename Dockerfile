@@ -1,0 +1,13 @@
+FROM alpine:3.9
+
+RUN apk add --no-cache --update php7-apache2 curl tar \
+      php7-mysqli php7-pdo_mysql php7-session php7-gd && \
+    mkdir -p /var/www/wordpress
+
+VOLUME /var/www/wordpress
+
+ADD wordpress.conf /etc/apache2/conf.d/wordpress.conf
+ADD run.sh /run.sh
+
+
+CMD ["/run.sh"]
