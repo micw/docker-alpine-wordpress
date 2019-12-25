@@ -1,7 +1,7 @@
-FROM alpine:3.9
+FROM alpine:3.11
 
 RUN apk add --no-cache --update php7-apache2 curl tar \
-      php7-mysqli php7-pdo_mysql php7-session php7-gd && \
+      php7-mysqli php7-pdo_mysql php7-session php7-gd php7-json && \
     sed -e "s~#LoadModule rewrite_module modules/mod_rewrite.so~LoadModule rewrite_module modules/mod_rewrite.so~g" -i /etc/apache2/httpd.conf && \
     mkdir -p /var/www/wordpress
 
