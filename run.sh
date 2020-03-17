@@ -45,6 +45,19 @@ define('FORCE_SSL_ADMIN', true);
 
 \$table_prefix  = 'wp_';
 
+EOF
+
+if [ ! -z "${COOKIE_DOMAIN}" ]; then
+	cat << EOF >>/var/www/wordpress/wp-config.php
+# Set cookie domain and let all paths point to / to allow multisite log-ins
+define('COOKIE_DOMAIN', '${COOKIE_DOMAIN}');
+define('ADMIN_COOKIE_PATH', '/');
+define('COOKIEPATH', '');
+define('SITECOOKIEPATH', '');
+EOF
+fi
+
+cat << EOF >>/var/www/wordpress/wp-config.php
 if ( !defined('ABSPATH') )
         define('ABSPATH', dirname(__FILE__) . '/');
 
