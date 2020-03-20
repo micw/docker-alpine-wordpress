@@ -69,6 +69,7 @@ EOF
 
 if [ "${COOKIE_ENFORCE_INSECURE}-" == "true-" ]; then
   echo 'Header edit* set-cookie "^(.*)(; secure)$" "$1"' > /etc/apache2/conf.d/wordpress_insecure_cookies.conf
+  echo 'Header edit* set-cookie "^(.*)(; secure)(;.*)$" "$1$3"' >> /etc/apache2/conf.d/wordpress_insecure_cookies.conf
 else
   rm -f /etc/apache2/conf.d/wordpress_insecure_cookies.conf
 fi
