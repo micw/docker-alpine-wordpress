@@ -54,6 +54,7 @@ define('COOKIE_DOMAIN', '${COOKIE_DOMAIN}');
 define('ADMIN_COOKIE_PATH', '/');
 define('COOKIEPATH', '');
 define('SITECOOKIEPATH', '');
+@ini_set('session.cookie_secure', false);
 EOF
 fi
 
