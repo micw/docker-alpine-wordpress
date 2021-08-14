@@ -8,6 +8,7 @@ RUN apk add --no-cache --update php7-apache2 curl tar \
 VOLUME /var/www/wordpress
 
 ADD wordpress.conf /etc/apache2/conf.d/wordpress.conf
+ADD php-options.ini /etc/php7/conf.d/99_php-options.ini
 ADD run.sh /run.sh
 
 
