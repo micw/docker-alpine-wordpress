@@ -1,7 +1,7 @@
-FROM alpine:3.16
+FROM alpine:3.22.1
 
-RUN apk add --no-cache --update php8-apache2 curl tar \
-      php8-mysqli php8-pdo_mysql php8-session php8-gd php8-json php8-tokenizer && \
+RUN apk add --no-cache --update php84-apache2 curl tar \
+      php84-mysqli php84-pdo_mysql php84-session php84-gd php84-json php84-tokenizer && \
     sed -e "s~#LoadModule rewrite_module modules/mod_rewrite.so~LoadModule rewrite_module modules/mod_rewrite.so~g" -i /etc/apache2/httpd.conf && \
     mkdir -p /var/www/wordpress
 

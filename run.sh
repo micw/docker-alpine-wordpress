@@ -75,7 +75,7 @@ else
 fi
 
 echo "Setting file owners"
-chown apache.apache /var/www/wordpress -R
+chown apache:apache /var/www/wordpress -R
 
 rm -f /usr/local/apache2/logs/httpd.pid
 mkdir -p /run/apache2
